@@ -1,5 +1,6 @@
 library(here)
 library(tidyverse)
+library(lubridate)
 library(dtplyr)
 library(vroom)
 library(lubridate)
@@ -38,13 +39,18 @@ cluck = dbConnect(
 )
 
 airdata = tbl(cluck, "airdata")
+x = dbReadTable(cluck, "airdata")
 
 airdata |>
-  group_by(site, measurement) |>
+  mutate(month = month(intervalend)) %>% 
+  group_by(site, measurement, month) |>
   summarize(
-    n = n(),
-    start = min(intervalstart, na.rm = TRUE),
-    end = max(intervalend, na.rm = TRUE)
+    monthly_max = max(reading, na.rm = TRUE)
   ) |> 
-  ungroup()
+  ungroup() |>
+  collect() |>
+  drop_na() |>
+  ggplot(aes(month, monthly_max)) +
+  geom_line() +
+  facet_wrap(vars(measurement), scales = "free_y")
 

@@ -93,6 +93,7 @@ read_airquality <- function(fp) {
 
 write_to_duck = function(con, files, name) {
   tbl = read_airquality(dst[1])
+  tbl = drop_na(tbl)
   
   if (!dbExistsTable(cluck, name)) {
     dbCreateTable(cluck, name, tbl)  
