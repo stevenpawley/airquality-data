@@ -10,7 +10,7 @@ jobs:
   data-refresh:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
     
     steps:
       - uses: actions/checkout@v3
