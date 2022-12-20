@@ -1,11 +1,13 @@
-name: Data Refresh
+name: Data-Refresh
 
 on:
   schedule:  
-  - cron:  '55 * * * *'
+  - cron:  '59 * * * *'
+  push:
+    branches: [main, master]
 
 jobs:
-  build:
+  Data-Refresh:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
