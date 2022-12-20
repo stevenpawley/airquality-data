@@ -10,7 +10,7 @@ jobs:
   data-refresh:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     
     steps:
       - uses: actions/checkout@v3
@@ -20,6 +20,8 @@ jobs:
           use-public-rspm: true
       
       - uses: r-lib/actions/setup-renv@v2
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
       
       - name: Run refresh script
         run: Rscript R/update-daily.R
