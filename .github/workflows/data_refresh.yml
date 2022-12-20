@@ -2,7 +2,7 @@ name: Data Refresh
 
 on:
   schedule:  
-  - cron:  '48 17 * * *'
+  - cron:  '52 17 * * *'
 
 jobs:
   build:
