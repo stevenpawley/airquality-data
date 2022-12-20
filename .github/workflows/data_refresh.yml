@@ -28,7 +28,7 @@ jobs:
         run: |
           if [[ "$(git status --porcelain)" != "" ]]; then
             git config --global user.name 'Steven Pawley'
-            git config --global user.email 'steven.pawley@aer.ca'
+            git config --global user.email 'dr.stevenpawley@gmail.com'
             git add .
             git commit -m "Auto update"
             git push
