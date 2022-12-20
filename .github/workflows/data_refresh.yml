@@ -28,9 +28,9 @@ jobs:
         run: |
           if [[ "$(git status --porcelain)" != "" ]]; then
             git config --global user.name 'Steven Pawley'
-            git config --global user.email 'dr.stevenpawley@gmail.com'
-            git add .
-            git commit -m "Auto update"
+            git config --global user.email 'steven.pawley@aer.ca'
+            git add data/airdata-daily.rds
+            git commit -m "Auto refresh daily data"
             git push
           else
             echo "Nothing to commit..."
