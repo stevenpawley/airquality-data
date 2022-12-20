@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-  name: refresh the dashboard
+  name: refresh_the_dashboard
   runs-on: ubuntu-20.04 
   env:
     GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
