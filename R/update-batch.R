@@ -15,6 +15,8 @@ last_dates <-
 
 new_data <- 
   map2_dfr(last_dates$station, last_dates$last_date, function(sta, dttm) {
+    message(sta)
     collect_air(sta, start = dttm, end = now(),  source = "aqhi")
   })
 
+saveRDS(new_data, here("data/airdata-daily.rds"))

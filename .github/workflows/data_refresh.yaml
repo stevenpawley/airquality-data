@@ -1,0 +1,35 @@
+name: Data Refresh
+
+on:
+  schedule:  
+  - cron:  '59 23 * * *'
+
+jobs:
+  build:
+  name: refresh the dashboard
+  runs-on: ubuntu-20.04 
+  env:
+    GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+  
+  steps:
+    - name: checkout_repo
+      uses: actions/checkout@v3
+      with:
+        use-public-rspm: true
+    
+    - name: install_packages
+    - uses: actions/setup-renv@v2
+    
+    - name: run_update_script
+      run: |
+        Rscript R/update-daily.R
+
+        if [[ "$(git status --porcelain)" != "" ]]; then
+          git config --global user.name 'Steven Pawley'
+          git config --global user.email 'steven.pawley@aer.ca'
+          git add .
+          git commit -m "Auto update"
+          git push
+        else
+          echo "Nothing to commit..."
+        fi
