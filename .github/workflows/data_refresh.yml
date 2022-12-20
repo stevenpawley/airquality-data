@@ -2,11 +2,11 @@ name: Data Refresh
 
 on:
   schedule:  
-  - cron:  '52 17 * * *'
+  - cron:  '55 * * * *'
 
 jobs:
   build:
-    runs-on: ubuntu-20.04 
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     
