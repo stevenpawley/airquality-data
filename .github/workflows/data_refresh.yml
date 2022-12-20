@@ -14,12 +14,12 @@ jobs:
     
     steps:
       - name: checkout_repo
-        uses: r-lib/actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           use-public-rspm: true
       
       - name: install_packages
-        uses: r-lib/actions/setup-renv@v2
+        uses: actions/setup-renv@v2
       
       - name: run_update_script
         run: |
