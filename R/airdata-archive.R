@@ -5,21 +5,12 @@ library(tidyr)
 library(stringr)
 library(airdataAB)
 library(AzureStor)
-library(AERtools)
 library(ggplot2)
 library(lubridate)
 
-# download data from blob storage
-con <- get_container('ds-spatial-raw')
-blobs <- list_blobs(con, "airquality")
-
-src <- blobs$name[-1]
-dir.create(here("tmp"))
-dst <- here("tmp", basename(src))
-storage_multidownload(con, src, dst)
-
 # read all tables
-tbls = lapply(dst, fread_airdata_csv)
+src = list.files(here("raw"), full.names = TRUE, pattern = "*.csv")
+tbls = lapply(src, fread_airdata_csv)
 airdata = rbindlist(tbls)
 airdata = airdata |> 
   as_tibble() |> 
