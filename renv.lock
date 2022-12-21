@@ -52,8 +52,8 @@
       "RemoteRepo": "airdataAB",
       "RemoteUsername": "stevenpawley",
       "RemoteRef": "HEAD",
-      "RemoteSha": "55ebe21bb7d6ea75adf7dc5ff65cbb53cbabe0b1",
-      "Hash": "c8afaf68f34f921e2a77fd6dc37880e3",
+      "RemoteSha": "a51f4920460c42aa5335c1863c8ee25003255ebb",
+      "Hash": "198791a1c4e3717f669bb51655c1d0e4",
       "Requirements": [
         "data.table",
         "dplyr",
