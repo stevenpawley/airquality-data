@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.1",
+    "Version": "4.2.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -111,26 +111,11 @@
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "airdataAB",
-      "RemoteUsername": "alberta-geological-survey",
+      "RemoteUsername": "stevenpawley",
       "RemoteRef": "HEAD",
-      "RemoteSha": "1f6acca77ae53b78b80c528f282b500e982dd5f3",
-      "Hash": "39d693842144a2fab3ed8d1046c8a53a",
-      "Requirements": [
-        "data.table",
-        "dplyr",
-        "ggplot2",
-        "glue",
-        "httr",
-        "jsonlite",
-        "lubridate",
-        "magrittr",
-        "purrr",
-        "rlang",
-        "stringr",
-        "tibble",
-        "tidyr",
-        "vroom"
-      ]
+      "RemoteSha": "59dcac3c71c68fa6146ebcb66aef217c648495fb",
+      "Hash": "d0bce8872c0e2e61b549e2b81aa0b824",
+      "Requirements": []
     },
     "askpass": {
       "Package": "askpass",
@@ -206,14 +191,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "0eb86baa62f06e8855258fa5a8048667",
-      "Requirements": []
-    },
-    "data.table": {
-      "Package": "data.table",
-      "Version": "1.14.6",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "aecef50008ea7b57c76f1cb5c127fb02",
       "Requirements": []
     },
     "dplyr": {
